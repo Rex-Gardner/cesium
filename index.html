@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Web GIS</title>
+	<meta charset="utf-8">
+	<link href="https://cesiumjs.org/releases/1.52/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	<script src="https://cesiumjs.org/releases/1.52/Build/Cesium/Cesium.js"></script>
+	<script src="js/jquery-3.3.1.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+	<div id="cesiumContainer"></div>
+	<div id="menuContainer">
+	<div id="bookmarks">
+		<h3>Закладки: </h3>
+		<button onclick="setCameraPosition(0);">Университет</button>
+		<button onclick="setCameraPosition(1);">Нью-Йорк</button>
+		<button onclick="setCameraPosition(2);">Горы</button>
+	</div>
+	<div id="layers">
+		<h3>Слои: </h3>
+		<form>
+		<div><input type="checkbox" name="layers" value="boxes" checked> <span>Боксы</span></div>
+		<div><input type="checkbox" name="layers" value="lines" checked> <span>Полилинии</span></div>
+		<div><input type="checkbox" name="layers" value="markers" checked> <span>Маркеры</span></div>
+		</form> 
+	</div>
+	<div id="tools">
+		<h3>Инструменты: </h3>
+		<form>
+		<select name="tools" onchange="toolsChanged();">
+		<option selected value="none">Выкл.</option>
+		<option value="measurements">Промеры</option>
+		<option value="coordinate-picking">Координаты клика</option>
+		<option value="object-info">Информация об объектах</option>
+		</select>		
+		</form> 
+	</div>
+	</div>
+</body>
+</html>
